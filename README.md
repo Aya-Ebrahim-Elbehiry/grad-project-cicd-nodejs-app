@@ -33,16 +33,11 @@ To connect the slave in jenkins with cloud vm-instance
 
 
 
-### Build docker image for Jenkins
-
-
 ### Create namespace then deploy Jenkins
 
 ```bash
-kubectl create namespace jenkins-ns
-kubectl config set-context --current –namespace=jenkins-ns
-kubectl create -f app-deployment.yaml
-kubectl create -f app-service.yaml
+kubectl create -f jenkins-deploy.yaml
+kubectl create -f auto-ns.yaml
 ```
 
 
@@ -51,24 +46,14 @@ kubectl create -f app-service.yaml
 
 
 
-
-
-
-
-
 -username of instance to ssh
-
-
-
-Here the credentials created
-
 
 
 ## Let’s create slave
 
 
 
-## Build pipeline that pull docker file from git then build the image of the application then push it to dockerhub then deploy the application
+## Build pipeline that pull docker file from git then build the image of the application then push it to gcr then deploy the application
 
 
 
@@ -79,7 +64,6 @@ Image pushed successfully
 ## Get IP:Port for the application
 
 
-## OR
 
 
 # Finalyyy
